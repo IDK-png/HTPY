@@ -6,6 +6,7 @@ for a in lines:
    code.append(a[:-1:])
   else:
    code.append(a)
-for a in code:
-   if a.startswith("echo"):
-      print(all_models.echo(a))
+print(code)
+#for a in code:
+  # if a.startswith("echo"):
+   #   print(all_models.echo(a))

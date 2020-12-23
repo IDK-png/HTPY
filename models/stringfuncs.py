@@ -13,4 +13,3 @@ def base(line):
         return t(line)
     else:
         return f"{line[5:len(line)-1]}"
-print(base('echo(12345) -t'))

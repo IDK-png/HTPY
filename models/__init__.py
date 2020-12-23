@@ -1,6 +1,7 @@
-from models.ifthishtmlfile import ifthishtmlfile as htmlcheck
+import check
+import stringfuncs as echo
 class htpy():
     def htmlcheck(self):
-       return htmlcheck.Htmlcheck().files()
-    def echo(self,line='echo("TEST")'):
-        return echo.echo(line)
+       return check.htpycheck()
+    def echo(self,line):
+        return echo.base(line)
