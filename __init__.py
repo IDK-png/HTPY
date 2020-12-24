@@ -1,4 +1,5 @@
 import interpreter
+import models.checkscript as check
 class SetUp():
     def __init__(self):
-	    self._Files = all_models.htpy().htmlcheck();print(interpreter())
+	    self._File = check();print(interpreter())
