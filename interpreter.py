@@ -1,4 +1,4 @@
-import models.__init__ as all_models;string = "";code = []
+string = "";code = []
 import models.stringfuncs as stringfuncs;from models.checkscript import files;
 path = f"C:/Users/maxda/Desktop/HTPY tests/{string.join(files())}"
 lines = open(path).readlines()
