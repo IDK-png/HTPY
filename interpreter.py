@@ -1,5 +1,5 @@
 import models.__init__ as all_models;string = "";code = []
-from models.stringfuncs import base;from models.checkscript import files;
+import models.stringfuncs as stringfuncs;from models.checkscript import files;
 path = f"C:/Users/maxda/Desktop/HTPY tests/{string.join(files())}"
 lines = open(path).readlines()
 def making_code_list():
@@ -11,6 +11,14 @@ def making_code_list():
 making_code_list()
 def interpreter():
  for a in code:
-  if a.startswith("echo"):
-     print(base(a))
+  if a.startswith("echo|"):
+   #  if stringfuncs.echo(a) != None:
+        print(stringfuncs.echo(a))
+    # else:
+       # return f"   Line {code.index(a)+1} Error\n   |\n   -->[{a}] "
+  if a.startswith("var|"):
+    # if stringfuncs.var(a) != None:
+        stringfuncs.var(a)
+     #else:
+       # return f"   Line {code.index(a)+1} Error\n   |\n   -->[{a}] "
 interpreter()
