@@ -20,6 +20,31 @@ making_code_list()
 
 def interpreter():
     for v in code:
+      if "=" in v:
+         if v.count("|")>2:
+            test = v.strip()
+            test = v[v.index("=")+1:len(v)].strip()
+            test = test.split("|")
+            test = test[::-1]
+            print(test)
+            for a in range(2):
+                test.pop(0)
+            for a,b in enumerate(test):
+                if b in funcs:
+                    test[test.index(b)] = funcs[b](test[a-1])
+                    test.pop(test.index(test[a-1]))
+            v = v.split("=")
+            v[1] = str(funcs[test[1]](test[0]))
+            stringfuncs.var("=".join(v))   
+         elif v.count("|")==2:
+            test = v.strip()
+            test = v[v.index("=")+1:len(v)].strip()
+            test = test.split("|")
+            v = v.split("=")
+            v[1] = str(funcs[test[0]](test[1]))
+            stringfuncs.var("=".join(v))
+         else:
+            stringfuncs.var(v) 
       if v.count("|")>2:
        test = v.split("|") # Делание удобного списка для работы над ним. например: ['echo', 'type', '2', '', '']
        test = test[::-1]
